@@ -44,9 +44,6 @@ public class NewBehaviourScript : MonoBehaviour, IDragHandler, IPointerUpHandler
 			horizontal = pos.x;
 			MoveJoystick(pos);
 		}
-		else {
-			horizontal = 0;
-		}
 	}
 
 	public virtual void OnPointerDown(PointerEventData data) {
@@ -55,6 +52,7 @@ public class NewBehaviourScript : MonoBehaviour, IDragHandler, IPointerUpHandler
 
 	public virtual void OnPointerUp(PointerEventData data) {
 		MoveJoystick(Vector2.zero);
+		horizontal = 0;
 	}
 
 	private void MoveJoystick(Vector2 inputVector) {
