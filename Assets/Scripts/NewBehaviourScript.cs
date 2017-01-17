@@ -62,5 +62,6 @@ public class NewBehaviourScript : MonoBehaviour, IDragHandler, IPointerUpHandler
 
 	public float GetHorizontal() {
 		return horizontal;
+        Debug.Log(horizontal);
 	}
 }
