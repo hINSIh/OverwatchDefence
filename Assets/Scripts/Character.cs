@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public abstract class Character : MonoBehaviour , ISkillHandler{
 
 	// Use this for initialization
 	void Start () {
@@ -13,4 +13,8 @@ public class Character : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public abstract void OnKeyShift();
+    public abstract void OnKeyE();
+    public abstract void OnUltimate();
 }
