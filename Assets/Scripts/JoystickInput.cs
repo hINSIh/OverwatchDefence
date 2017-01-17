@@ -11,6 +11,7 @@ public class JoystickInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//Debug.Log(Input.touchCount);
+		//Debug.Log(NewBehaviourScript.GetHorizontal());
 	}
 }
