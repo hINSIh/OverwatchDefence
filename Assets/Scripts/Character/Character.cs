@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour , ISkillHandler{
+public abstract class Character : MonoBehaviour{
+
+    private ISkillHandler skillHandler;
 
 	// Use this for initialization
 	void Start () {
-		
+        skillHandler = GetComponent<ISkillHandler>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-    public abstract void OnKeyShift();
-    public abstract void OnKeyE();
-    public abstract void OnUltimate();
 }
