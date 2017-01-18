@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour{
-
-    private ISkillHandler skillHandler;
-
+public class RoadhogWeapon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        skillHandler = GetComponent<ISkillHandler>();
+		
 	}
 	
 	// Update is called once per frame
