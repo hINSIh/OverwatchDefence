@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-    public NewBehaviourScript joystick;
+	public JoystickInput joystick;
  
     // Use this for initialization
     void Start () {
