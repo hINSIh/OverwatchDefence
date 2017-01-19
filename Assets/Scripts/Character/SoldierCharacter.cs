@@ -2,7 +2,5 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PharahCharacter : Character
-{
-	
+public class SoldierCharacter : Character {
 }

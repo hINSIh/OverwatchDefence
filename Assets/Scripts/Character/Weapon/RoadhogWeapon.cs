@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoadhogWeapon : MonoBehaviour {
+public class RoadhogWeapon : MagazineWeapon {
 
 	// Use this for initialization
 	void Start () {
@@ -12,5 +12,10 @@ public class RoadhogWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public override void Fire()
+	{
+		throw new System.NotImplementedException();
 	}
 }

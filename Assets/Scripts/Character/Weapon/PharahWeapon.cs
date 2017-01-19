@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PharahWeapon : Weapon {
-
-    public float fireDelay;
-    public int damage;
-
+public class PharahWeapon : MagazineWeapon {
 
     // Use this for initialization
     void Start () {
@@ -15,6 +11,11 @@ public abstract class PharahWeapon : Weapon {
 	
 	// Update is called once per frame
 	void Update () {
+		
+	}
+
+	public override void Fire()
+	{
 		
 	}
 }

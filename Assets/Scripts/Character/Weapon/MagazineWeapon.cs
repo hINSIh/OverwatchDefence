@@ -2,34 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MagazineWeapon : Weapon {
-    public float reloadDelay;
-    public int magazine;
-    private bool canFire;
+public abstract class MagazineWeapon : Weapon
+{
+	public float reloadDelay;
+	public int magazine;
+	private bool canFire = true;
 
-    private int currentMagazine;
+	private int currentMagazine;
 
-    public override IEnumerator Cooldown()
-    {
-        canFire = false;
+	void Awake() {
+		currentMagazine = magazine;
+	}
 
-        currentMagazine--;
+	public IEnumerator Reload() {
+		Debug.Log("reloading...");
+		yield return new WaitForSeconds(reloadDelay);
+		Debug.Log("reload complete");
 
-        if (currentMagazine <= 0)
-        {
-            yield return new WaitForSeconds(reloadDelay);
+		currentMagazine = magazine;
+	}
 
-            //animation.Play(Reload);
-        }
+	public override bool CanFire()
+	{
+		return canFire;
+	}
 
-        else
-        {
-            yield return new WaitForSeconds(reloadDelay);
-        }
+	public override IEnumerator Cooldown()
+	{
+		canFire = false;
+		currentMagazine--;
 
-        canFire = true;
+		if (currentMagazine <= 0)
+		{
+			yield return Reload();
+		}
+		else
+		{
+			yield return new WaitForSeconds(fireDelay);
+		}
 
+		canFire = true;
+	}
 
-    }
-
+	public int GetCurrentMagazine()
+	{
+		return currentMagazine;
+	}
 }

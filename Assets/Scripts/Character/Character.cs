@@ -2,18 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour{
+public abstract class Character : MonoBehaviour
+{
+	public int health;
 
-    private ISkillHandler skillHandler;
+	private Weapon weapon;
+	private ISkillHandler skillHandler;
 
+	protected Character() {
+		
+	}
 
 	// Use this for initialization
-	void Start () {
-        skillHandler = GetComponent<ISkillHandler>();
+	void Start()
+	{
+		weapon = GetComponent<Weapon>();
+		skillHandler = GetComponent<ISkillHandler>();
+		StartCoroutine(CoroutineUpdate());
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update() { 
 		
+	}
+
+	public IEnumerator CoroutineUpdate() {
+		while (true) {
+			yield return null;
+			if (Input.GetMouseButton(0) && weapon.CanFire()) {
+				weapon.TryFire();
+			}
+		}
 	}
 }

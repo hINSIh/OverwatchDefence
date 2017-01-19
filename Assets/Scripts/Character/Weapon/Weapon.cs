@@ -7,16 +7,16 @@ public abstract class Weapon : MonoBehaviour {
     public float fireDelay;
     public int damage; 
 
-    private bool canFire;
+    private bool canFire = true;
     
     public virtual bool CanFire()
     {
         return canFire;
     }
 
-    void TryFire()
+    public void TryFire()
     {
-        Cooldown();
+		StartCoroutine(Cooldown());
         Fire();
     }
 

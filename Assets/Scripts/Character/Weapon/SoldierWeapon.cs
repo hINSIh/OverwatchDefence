@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierWeapon : MonoBehaviour {
+public class SoldierWeapon : MagazineWeapon {
 
 	// Use this for initialization
 	void Start () {
@@ -12,5 +12,9 @@ public class SoldierWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public override void Fire() {
+		Debug.Log("soldier fire! " + GetCurrentMagazine() + "/" + magazine);
 	}
 }
