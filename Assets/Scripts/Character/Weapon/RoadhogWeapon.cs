@@ -14,7 +14,7 @@ public class RoadhogWeapon : MagazineWeapon {
 		
 	}
 
-	public override void Fire()
+	public override void Fire(Vector3 mose)
 	{
 		throw new System.NotImplementedException();
 	}
