@@ -29,7 +29,7 @@ public abstract class Character : MonoBehaviour
 		while (true) {
 			yield return null;
 			if (Input.GetMouseButton(0) && weapon.CanFire()) {
-				weapon.TryFire();
+				weapon.TryFire(Input.mousePosition);
 			}
 		}
 	}

@@ -14,8 +14,8 @@ public class PharahWeapon : MagazineWeapon {
 		
 	}
 
-	public override void Fire()
-	{
+	public override void Fire(Vector3 mousePosition)
+    { 
 		
 	}
 }

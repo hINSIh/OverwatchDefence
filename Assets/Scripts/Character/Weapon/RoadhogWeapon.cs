@@ -14,7 +14,7 @@ public class RoadhogWeapon : MagazineWeapon {
 		
 	}
 
-	public override void Fire()
+	public override void Fire(Vector3 mousePosition)
 	{
 		throw new System.NotImplementedException();
 	}
