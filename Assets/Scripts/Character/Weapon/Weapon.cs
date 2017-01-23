@@ -14,10 +14,10 @@ public abstract class Weapon : MonoBehaviour {
         return canFire;
     }
 
-    public void TryFire(Vector3 mousePosition)
+    public void TryFire()
     {
 		StartCoroutine(Cooldown());
-        Fire(mousePosition);
+        Fire();
     }
 
     public virtual IEnumerator Cooldown()
@@ -27,5 +27,5 @@ public abstract class Weapon : MonoBehaviour {
         canFire = true;
     }
 
-    public abstract void Fire(Vector3 targetPosition);
+    public abstract void Fire();
 }
