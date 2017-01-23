@@ -7,17 +7,17 @@ public abstract class Weapon : MonoBehaviour {
     public float fireDelay;
     public int damage; 
 
-    private bool canFire = true;
+	protected bool canFire = true;
     
     public virtual bool CanFire()
     {
         return canFire;
     }
 
-    public void TryFire()
+    public void TryFire(Vector3 mousePosition)
     {
 		StartCoroutine(Cooldown());
-        Fire();
+        Fire(mousePosition);
     }
 
     public virtual IEnumerator Cooldown()
@@ -27,5 +27,5 @@ public abstract class Weapon : MonoBehaviour {
         canFire = true;
     }
 
-    public abstract void Fire();
+    public abstract void Fire(Vector3 mousePosition);
 }

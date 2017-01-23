@@ -38,7 +38,6 @@ public class JoystickInput : MonoBehaviour, IDragHandler, IPointerUpHandler, IPo
 		{
 			pos.x = pos.x / backgroundSize.x * 2 + pivot.x;
 			pos.y = pos.y / backgroundSize.y * 2 + pivot.y;
-			Debug.Log(pos.x);
 
 			if (pos.magnitude > 1)
 			{

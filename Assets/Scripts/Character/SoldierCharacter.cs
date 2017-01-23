@@ -2,5 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoldierCharacter : Character {
+public class SoldierCharacter : Character
+{
+	void Start() {
+		skills.OnKeyShift();
+	}
 }

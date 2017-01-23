@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SoldierSkillHandler : MonoBehaviour, ISkillHandler {
 
-    public virtual void OnKeyShift()
+    public void OnKeyShift()
     {
 
     }
 
-    public virtual void OnKeyE()
+    public void OnKeyE()
     {
 
     }
 
-    public virtual void OnUltimate()
+    public void OnUltimate()
     {
 
     }

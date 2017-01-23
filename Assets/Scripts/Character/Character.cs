@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
 	public int health;
@@ -9,16 +10,18 @@ public abstract class Character : MonoBehaviour
 	private Weapon weapon;
 	private ISkillHandler skillHandler;
 
+	private Animator animator;
+
 	protected Character() {
 		
 	}
 
-	// Use this for initialization
-	void Start()
+	void Awake()
 	{
 		weapon = GetComponent<Weapon>();
 		skillHandler = GetComponent<ISkillHandler>();
 		StartCoroutine(CoroutineUpdate());
+		animator = GetComponent<Animator>();
 	}
 
 	void Update() { 
@@ -29,8 +32,16 @@ public abstract class Character : MonoBehaviour
 		while (true) {
 			yield return null;
 			if (Input.GetMouseButton(0) && weapon.CanFire()) {
-				weapon.TryFire();
+				weapon.TryFire(Input.mousePosition);
 			}
 		}
+	}
+
+	public Animator GetAnimator() {
+		return animator;
+	}
+
+	public ISkillHandler skills { 
+		get { return skillHandler;} 
 	}
 }

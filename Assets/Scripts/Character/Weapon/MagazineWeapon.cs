@@ -6,11 +6,10 @@ public abstract class MagazineWeapon : Weapon
 {
 	public float reloadDelay;
 	public int magazine;
-	private bool canFire = true;
 
 	private int currentMagazine;
 
-	void Awake() {
+	void Start() {
 		currentMagazine = magazine;
 	}
 

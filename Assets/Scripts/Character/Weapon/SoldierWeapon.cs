@@ -14,7 +14,12 @@ public class SoldierWeapon : MagazineWeapon {
 		
 	}
 
-	public override void Fire() {
+	public override void Fire(Vector3 mousePosition) {
 		Debug.Log("soldier fire! " + GetCurrentMagazine() + "/" + magazine);
+
+		Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+		Vector3 direction = targetPosition - transform.position;
+
+
 	}
 }
